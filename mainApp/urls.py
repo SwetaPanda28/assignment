@@ -19,6 +19,8 @@ from django.urls.conf import include
 from . import views
 urlpatterns = [
    path('login',views.login,name='login'),
+   path('logout',views.logout,name='logout'),
    path('signin',views.signup,name='signup'),
    path('',views.home,name='home'),
+   path('change',views.changeProperty,name='change'),
 ]

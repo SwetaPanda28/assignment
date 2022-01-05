@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'mainApp'
 ]
 
@@ -71,7 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'assignment.wsgi.application'
 2
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 5*60
+SESSION_COOKIE_AGE = 99*60
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -102,13 +103,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'mainApp.authentication.CustomAuthentication',
-    ],
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'mainApp.authentication.CustomAuthentication',
+#     ],
+# }
 
-AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend','mainApp.authentication.CustomAuthentication']
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -161,7 +162,7 @@ SIMPLE_JWT = {
   'JTI_CLAIM': 'jti',
 
   'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-  'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+  'SLIDING_TOKEN_LIFETIME': timedelta(minutes=99),
   'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 
 

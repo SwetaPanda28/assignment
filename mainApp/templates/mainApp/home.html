@@ -1,0 +1,55 @@
+{% extends 'mainApp/base.html' %}
+
+{% block headblock %}<title>EDIT DETAILS</title>{% endblock headblock %}
+
+{% block bodyblock %}
+  
+    <div>
+    <table cellpadding=10 cellspacing=10 border=2>
+
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <form action="{% url 'change' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" value="1" name="id">  
+                <th>username</th>
+                <td><input type="text" name="username" id="username" value="{{username}}"></td>  
+                <td><input type="submit" value="edit" name="edit"></td>  
+                <td><input type="submit" value="delete" name="delete"></td>  
+            </form>
+        </tr>
+        <tr>
+            <form action="{% url 'change' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" value="2" name="id">  
+                <th>email</th>
+                <td><input type="email" name="email" id="email" value="{{email}}"></td>  
+                <td><input type="submit" value="edit" name="edit"></td>  
+                <td><input type="submit" value="delete" name="delete"></td>  
+            </form>  
+        </tr>
+        <tr>
+            <form action="{% url 'change' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" value="3" name="id">  
+                <th>Address</th>
+                
+                <td><input type="text" name="address" id="address" value="{{address}}"></td>  
+                <td><input type="submit" value="edit" name="edit"></td>  
+                <td><input type="submit" value="delete" name="delete"></td>   
+            </form> 
+        </tr>
+        <tr>
+            <th colspan=4>
+                <a href="{% url 'logout' %}"> logout </a>
+            </th>
+        </tr>
+    </table>
+    </div>
+
+{% endblock bodyblock %}
