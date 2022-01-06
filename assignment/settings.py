@@ -70,9 +70,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'assignment.wsgi.application'
-2
+
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 99*60
+SESSION_COOKIE_AGE = 5*60
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -171,7 +171,7 @@ SIMPLE_JWT = {
   'JTI_CLAIM': 'jti',
 
   'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-  'SLIDING_TOKEN_LIFETIME': timedelta(minutes=99),
+  'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
   'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 
 
