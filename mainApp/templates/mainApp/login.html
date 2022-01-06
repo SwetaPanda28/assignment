@@ -5,12 +5,13 @@
 {% block bodyblock %}
 <form action="" method="post">
     {% csrf_token %}
-    <div>
+    
         email :  <input type="email" name="email" id="email"><br><br>
         password : <input type="password" name="password" id="password"><br><br>
         <button id="submit "type="submit" > SUBMIT</button>
-        
+        <br>
+        <br>
         <a href="{% url 'signup' %}">sign up</a>
-    </div>
+    
 </form>
 {% endblock bodyblock %}

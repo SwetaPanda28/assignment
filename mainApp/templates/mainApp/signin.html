@@ -5,7 +5,7 @@
 {% block bodyblock %}
     <form action="" method="post">
         {% csrf_token %}
-        <div>
+        
             email :  <input type="email" name="email" id="email"><br><br>
             username :  <input type="text" name="username" id="username"><br><br>
             password : <input type="password" name="password" id="password"><br><br>
@@ -13,7 +13,8 @@
             Address : <textarea name="address" id="address" cols="30" rows="10"></textarea> <br>
 
             <button id="submit "type="submit" > SUBMIT</button>
-
-        </div>
+            <br>
+            <br>
+            <a href="{% url 'login' %}">log in</a>
     </form>
 {% endblock bodyblock %}
